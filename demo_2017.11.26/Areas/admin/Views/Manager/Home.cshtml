@@ -1,0 +1,36 @@
+﻿@model IEnumerable<demo_2017._11._26.Models.article>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/news.css")
+}
+@Styles.Render("~/Content/news.css")
+
+<h1>最新消息</h1>
+<div class="container">
+    <div class="row">
+        <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+            <ul class="event-list">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <time datetime="2018-10-29">
+                            @Html.DisplayFor(modelItem => item.artDate)
+                        </time>
+                        <div class="info">
+                            <h2 class="title">
+                                @Html.DisplayFor(modelItem => item.title)
+                            </h2>
+                            @Html.DisplayFor(modelItem => item.content)
+                        </div>
+
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
